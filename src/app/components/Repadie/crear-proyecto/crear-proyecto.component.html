@@ -1,0 +1,313 @@
+
+<div class="container" style="padding: 5px;">
+    <!-- informacion del proyecto -->
+    <div class="row" >
+        <div class="col-md-8" >
+            <div class="row">
+                 <div class="col-md-12" >
+
+                    <label  for="lblCrearPry" 
+                            class="col-form-label pull-left tamnyo_letra_titulo"
+                            *ngIf="esCrearPry">Crear proyecto
+                    </label>    
+
+                    <label  for="lblProyecto" 
+                            class="col-form-label pull-left tamnyo_letra_titulo"
+                            *ngIf="!esCrearPry ">Proyecto
+                    </label>    
+                    
+                    <label  for="lblEditar" 
+                            class="col-form-label pull-left tamnyo_letra_titulo"
+                            *ngIf="esEditarPry ">&nbsp;pry-001
+                    </label>    
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+            <label class="colorGT fondocodproy" *ngIf="esCrearPry" >Pry-0001 </label>
+            <button class="btn btn-primary pull-right buttonAction"
+                    style="margin-top: 10px;" 
+                        type="button" 
+                        (click)="llamarCrearProyecto();"
+                        *ngIf="!esCrearPry"
+                        >Crear Proyecto
+            </button>
+
+        </div>
+
+        
+    </div>
+
+    <div *ngIf="!esCrearPry; then divBusqueda else divCrearPry "></div>
+    <ng-template #divBusqueda>
+                <!-- linea que separa la info -->
+                <div class="row">
+                    <hr class="pull-right">
+                </div>
+        <!-- titulo de la busqueda -->
+        <div class="row">
+            <div class="col-md-12" style=" text-align: center; color: #005587;">
+            <h5 class="modal-title text-center">{{busqueda_titulo}}</h5>
+            </div>
+
+        </div>
+        <!-- filtros y criterios de busqueda -->
+        <div class="row rowBusqueda">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4">                        
+                        <label for="categproyecto" class="col-form-label pull-left">
+                            Buscar por
+                        </label>                                      
+                    </div>
+                    <div class="col-md-8">
+                        <select id="idfiltroCampos"  
+                                name="filtroCampos" 
+                                class="form-select form-select-md mb-3 pull-right" >
+                            <option 
+                                    id="idoptcateg" 
+                                    [selected]="false" 
+                                    [disabled]="true">Seleccione una categoria
+                            </option>
+                            
+                            <option *ngFor="let opts of this.arrFiltrosCmb" 
+                                    id="{{opts._tipo}}{{opts._indice}}"
+                                    [value]="opts._indice" 
+                                    [selected] = "opts._esSeleccionado"
+                                    [disabled] = "opts._esInactivo"
+                                    >
+                                    {{opts._valor}}
+                            </option>
+
+                        </select>
+            
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4">                        
+                        <label for="categproyecto" class="col-form-label pull-left">
+                            Criterio
+                        </label>                                      
+                    </div>
+                    <div class="col-md-8">
+                        <input  type="text" 
+                                class="form-control " 
+                                id="criteriotxt" 
+                                aria-describedby="criteriotxt"
+                                placeholder="Ingrese criterio de busqueda"
+                                >
+    
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary pull-left buttonAction anchobtn " 
+                        type="button" >
+                        Buscar
+                </button>            
+            </div>
+            
+        </div>
+        
+        <!-- detalle de la busqueda -->
+        <div class="row">
+            <div class="col-md-12" style=" text-align: center; color: #005587;">
+            <h5 class="modal-title text-center">Proyectos creados</h5>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 table-responsive-sm">
+                <table class="table table-sm anotherhover table-striped">
+                  <thead class="tamanyo_letra_labelp">
+                    <tr>
+                      <th scope="col">No.</th>
+                      <th scope="col">Nombre del proyecto</th>
+                      <th scope="col">Fecha inscripción</th>
+                      <th scope="col">Libro</th>
+                      <th scope="col">Accion</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="tamanyo_letra_inputp">
+                        <td>
+                            pry-001
+                        </td>
+                        <td>
+                            Proyecto modernizacion de carreteras de peaje...
+                        </td>
+                        <td>
+                            11/12/2022
+                        </td>
+                        <td>
+                            Priorizado
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-primary text-info tamanyo_letra_buttonp" *ngIf="true"
+                                (click)="('Cross click');showForEdit()"
+                                >
+                                <fa-icon [icon]=faEdit></fa-icon>
+                            </a>
+                            <a class="btn btn-outline-danger text-withe tamanyo_letra_buttonp" *ngIf="true"
+                                (click)="showForDelete()">
+                                <fa-icon [icon]=faDelete></fa-icon>
+                            </a>
+                        </td>
+                        
+                    </tr>
+                    <!-- <tr class="tamanyo_letra_inputp"
+                      *ngFor="let sol of repColVencidasService.repColVencidasList">
+                      <td> {{sol.seccionNombre    }}</td>
+                      <td> {{sol.alumnoNombres    }}</td>
+                      <td> {{sol.ultimoMesPagadoNombre  }}</td>
+                      <td> {{sol.montoxMes        }}</td>
+                      <td> {{sol.moraxMes         }}</td>
+                      <td> {{sol.descuentoxMes    }}</td>
+                      <td> {{sol.totalDeuda       }}</td>
+                    </tr> -->
+                  </tbody>
+
+                </table>
+              </div>
+        </div>
+    </ng-template>
+
+    <ng-template #divCrearPry>
+        <!-- linea que separa la info -->
+        <div class="row">
+            <hr class="pull-right">
+        </div>
+
+        <!-- nombre del proyecto -->
+        <div class=" form-group row rowform">
+            <div class="col-md-4">
+                <label for="nombreproyecto" class="col-form-label pull-right">
+                    Nombre del proyecto
+                </label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control pull-left" id="nombreproyecto"
+                    placeholder="Ingresar nombre del proyecto">
+            </div>
+        
+        </div>
+        
+        <!-- row de la certificacion, y carga de archivo del proyecto -->
+        <div class="row" >
+            <div class="col-md-4">
+                <label for="certiproyecto" class="col-form-label pull-right">
+                    Certificación punto de acta de la priorización del proyecto
+                </label>
+        
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control pull-left" id="certiproyecto"
+                    placeholder="Ingresar la certificación del proyecto">
+            </div>
+            <div class="col-md-4">
+                <div class="row subrowForm">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-info buttonHover">
+                            Cargar archivo
+                        </button>
+        
+                    </div>
+        
+                </div>
+                <div class="row subrowForm">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-info buttonHover">
+                            Cargar otros archivos
+                        </button>
+        
+                    </div>
+        
+                </div>
+                <!-- <fa-icon [icon]="faUpload"></fa-icon> -->
+            </div>
+        
+        </div>
+        <!-- fechas priorizacion y categoria-->
+        <div class="row" >
+                    <div class="col-md-4">
+                        <label for="fecpriproyecto" class="col-form-label pull-right">
+                            Fecha de priorización
+                        </label>
+                
+                    </div>
+                    <div class="col-md-2">
+                        <input type="date" class="form-control pull-left" id="fecpriproyecto"
+                            placeholder="Ingresar nombre del proyecto">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="categproyecto" class="col-form-label pull-left">
+                            Categoria del proyecto
+                        </label>
+                
+                    </div>
+                    <div class="col-md-3">
+                        <select id="idCategoria"  name="categoria" class="form-select form-select-md mb-3 pull-right" >
+                            <option id="idoptcateg" [selected]="false" [disabled]="true">Seleccione una categoria</option>
+                        </select>
+                    </div>        
+        </div>
+        <!-- fecha de inscripcion -->
+        <div class="row" >
+            <div class="col-md-4">
+                <label for="fecinscripproyecto" class="col-form-label pull-right">
+                    Fecha de inscripción
+                </label>
+        
+            </div>
+            <div class="col-md-2">
+                <input type="date" class="form-control pull-left" id="fecinscripproyecto"
+                    placeholder="Ingresar nombre del proyecto">
+            </div>
+                            
+        </div> 
+        <!-- botones de guardar y cancelar -->
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-outline-info buttonAction-out-line pull-right">
+                                    Cancelar
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-info buttonAction pull-left">
+                                    Guardar
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" 
+                                        class="btn btn-info buttonAction pull-right"
+                                        (click)="llamarHome();"
+                                        >
+                                    Regresar
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </ng-template>
+    
+</div>

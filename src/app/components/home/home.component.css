@@ -1,0 +1,13 @@
+*{
+    font-family: 'Franklin Gothic Medium';
+    /* color: #005587; */
+  }
+.card-header{
+    height: 66px;
+    font-weight: bold;
+    
+}
+.pull-right{
+    float: right;
+    background-color: #005587;
+}

@@ -1,0 +1,37 @@
+<!-- <app-headers></app-headers>
+<router-outlet></router-outlet> -->
+
+
+<div *ngIf="!isLoggedIn(); then autenticarse else cargacomponentes"></div>
+<ng-template #autenticarse >
+    <app-headers ></app-headers>
+    <app-login></app-login>
+    <!-- <router-outlet></router-outlet> -->
+</ng-template>
+
+<ng-template #cargacomponentes >
+    
+    <main class="page-content">
+    
+        <div class="container-fluid ">
+          <app-headers ></app-headers>
+          <div class="row" >
+          
+            <div class="col-md-12" >
+            <!-- <h2> <img src="assets/img/angular.png" alt="angular logo" width="70px"> Angular Sidebar Template</h2>
+                  <hr>
+                  <p>This is a responsive sidebar template with dropdown menu built with angular 7 and bootstrap 4.</p> -->
+            <!-- <button class="btn btn-primary fa fa-user" (click)="type_activity()" >actividad</button> -->
+            
+            <!-- <button class="btn btn-secondary" (click)="toggleBackgroundImage()">Toggle Backgr. Image</button> -->
+            <router-outlet></router-outlet>
+
+          </div>
+
+        </div>
+        
+      </div>
+      
+    </main>
+
+</ng-template>

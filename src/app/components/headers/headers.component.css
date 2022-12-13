@@ -1,0 +1,282 @@
+.pull-right {
+    float: right;
+    margin: 2px;
+  }
+  .colorTextoBarra{
+    color: white !important;
+    background-color: #005587;
+  }
+  .colorGT{
+    background-color: #005587 !important;
+    height: 75px ;
+  }
+
+  /* aqui empieza los efectos */
+  .navbar {
+    background: #000000
+}
+
+.activado{
+  font-weight: bold;
+  background: whitesmoke;
+  color: #005587 !important;
+
+}
+
+ 
+.hoversubitem:hover{
+  /* width: 100%;
+  background-color: whitesmoke;
+  color: #005587 !important;
+  transition: 0.99s; */
+  background-color: white;
+} 
+
+/* a {
+  text-decoration: none;
+  transition: color .4s ease;
+} */
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: #fec400;
+    transition: 0.4s
+}
+
+.nav-item:hover::after {
+    width: 100%;
+    background-color: red;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fec400
+}
+
+.nav-link {
+    /* padding: 25px 5px; */
+    transition: 0.4s;
+    color: #fec400;
+}
+
+body{
+    background-color:grey;
+}
+
+.img-adaptation{
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  margin: 5px;
+  /* border-style: double; */
+  /* border-color: red; */
+}
+
+.posiciondiv{
+  /* margin-left: 33%; 
+  margin-top: 8%; 
+  margin-right: 5%; */
+  display: block;
+  position: absolute;
+  top: 5%;
+  /* left: 30%; */
+  height: 65px;
+  width: 200px;
+  z-index: 2;
+}
+
+.posicionbtToggle{
+  z-index: 2;
+  float: right;
+  margin: 5px;
+}
+
+/* aqui el sidebar*/
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+/* EFECTOS DEL MENU HAWK*/
+
+.menulateral {
+  width: 368px;
+  position: absolute;
+  height:100% ;
+  background: #005587;
+  color: #fff;
+  outline: 0px;
+  margin-top: 77px; 
+  /* width: 368px;" */
+}
+
+.menulateral h2{
+  text-align: center ;
+  margin: 0px;
+  padding: 10px;
+  background: #005587;
+  /* color: snow; */
+}
+
+.menulateral p{
+
+  font-weight: bold;
+  /* color: snow; */
+}
+
+.menulateral .opcionesmenu{
+  margin-left: 5px;
+}
+
+/* .menulateral .list{
+  width: 350px;
+} */
+
+.menulateral ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  /* color: #fff; */
+}
+
+.menulateral li{
+  outline: 1px solid #005587;
+  transition-property: border;
+  transition-duration: 0.5s;
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: -5px;
+}
+
+.menulateral li:hover{
+  /* transition: 0.95s; */
+  /* background: rgb(195, 220, 240); */
+  /* border-left: 5px solid #fff; */
+  /* cursor: pointer; */
+  /* width: 100%; */
+  /* background-color: whitesmoke; */
+  /* color: #005587 !important; */
+  border-style: none;
+  width: 300px;
+}
+
+.menulateral li a:hover{
+  transition: 0.90s;
+  /* background: rgb(195, 220, 240); */
+  border-left: 5px solid #fff;
+  cursor: pointer;
+  /* width: 100%; */
+  background-color: whitesmoke;
+  color: #005587 !important;
+  
+}
+
+.colorli{
+  color: white;
+}
+.menulateral a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contenedor{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgb(136, 85, 85);
+  /* background: #eee; */
+  padding: 30px;
+  transition: all 0.5s;
+  margin-left: -1px;
+}
+
+.menu-barra{
+  cursor: pointer;
+  margin-top: -30px;
+  margin-left: -12px;
+}
+
+.abrir{
+  transform: translateX(250px);
+}
+
+.menulateral .opcionesmenu .list{
+  margin-left: 5px;
+}
+
+/* empieza los estilos y manipulacion del div .contenedor */
+.contenedor .row.formulario{
+  display: none;
+  background: rgb(216, 154, 154);
+  width: 85%;
+  position: relative;
+} 
+
+.contenedor h2{
+  text-align: center;
+}
+
+
+.posicioniz{
+  float: right;
+}

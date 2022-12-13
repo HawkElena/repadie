@@ -1,0 +1,147 @@
+
+<!-- https://careydevelopment.us/blog/how-to-add-a-responsive-sidebar-navigation-menu-to-your-angular-app -->
+
+
+  <div class="sidebar-nav colorGT" *ngIf="true">
+    <nav class="navbar navbar-dark bg-primary fixed-top colorGT">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"  >
+    
+                </div>
+                <div class="col-md-4"  >
+    
+                </div>
+                <div class="col-md-4"  >
+    
+                </div>
+                
+            </div>
+            <div class="card-body card shadow posiciondiv" *ngIf="true">
+                <a class="navbar-brand ">
+                    <img src="assets/img/logorepadie1.png" class="img-fluid flex-md-grow-1 " alt="Responsive image">
+                </a>
+            </div>
+                     
+            <!-- menu list no modal -->
+            <!-- <div class="menulateral" id="offcanvasNavbar" 
+            aria-labelledby="offcanvasNavbarLabel"
+            >
+                <h2>Menu </h2>
+                <div class="opcionesmenu">
+                  <div class="list">
+                    <ul>
+                      <li class="ocultardivscontenedor" id="emp"><a href="#"><i class="fa fa-home"></i> Empleados</a> </li>
+                      <li class="ocultardivscontenedor" id="pues"><a href="#"><i class="fa fa-briefcase"></i> puestos</a> </li>
+                      <li class="ocultardivscontenedor" id="Acti"> <a href="#"><i class="fa fa-list"></i> Actividades</a> </li>
+                      <li class="ocultardivscontenedor" id="Rep"><a href="#"><i class="fa fa-money"></i> Reportes</a> </li>
+                    </ul>
+                  </div>
+            
+                </div>
+            
+              </div>
+             -->
+
+            <!-- Menus List -->
+            <div    class="offcanvas offcanvas-start shadow " 
+                    tabindex="-1" 
+                    id="offcanvasNavbar" 
+                    aria-labelledby="offcanvasNavbarLabel"
+                    style="margin-top: 77px; width: 368px;"
+                    >
+              <div class="offcanvas-body ">
+                <div class="menulateral">
+                    <div class="opcionesmenu">
+                        <div class="list">
+                            <ul>
+                                <li > 
+                                    <h2> Menu</h2></li>
+                                <li >                                    
+                                    <p >
+                                        <fa-icon [icon]=faProy></fa-icon> Proyectos
+                                        
+                                    </p>
+                                    <i class="fa-regular fa-money-check-pen"></i>
+                                    <ul >
+                                        <li >
+                                            <a class="colorTextoBarra 
+                                                        hoversubitem colorli "
+                                                aria-current="page" [routerLinkActive]="['activado']" routerLink="/proyc"
+                                                >
+                                                Creación del proyecto
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                                <li ><p>
+                                    <fa-icon [icon]=faLibros></fa-icon> Libros
+                                    </p>
+                                    
+                                    <ul >
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                href="#">Priorizado</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                [routerLinkActive]="['activado']" routerLink="/project">Aprobado</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                href="#">Revocación de priorización</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                href="#">Improbados</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page" href="#">En
+                                                ejecución</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                href="#">Ejecutados</a>
+                
+                                        </li>
+                                        <li >
+                                            <a class=" colorTextoBarra hoversubitem" aria-current="page"
+                                                href="#">Finalizados</a>
+                
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li >Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group pull-right">
+                <!-- Mobile Menu Toggle Button -->
+                <button class="navbar-toggler posicionbtToggle pull-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" *ngIf="isLoggedIn()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <button     *ngIf="isLoggedIn()" type="button" 
+                            class="btn btn-danger pull-right" 
+                            routerLink="/login" (click)="logout()">
+                    <fa-icon [icon]=faSignOut></fa-icon> Cerrar Session
+                </button>
+                <button  type="button" *ngIf="false"
+                class=" btn btn-success pull-right" >
+                    <fa-icon [icon]=faDownload></fa-icon> Descargar documento
+                </button>
+            </div>
+        </div>
+    </nav>
+  </div>

@@ -1,0 +1,91 @@
+*{
+  font-family: 'RockwellRegullar';
+  color: #005587;
+}
+h2{
+    /* background-color: #005587; */
+    color: #005587;
+    font-family: 'RockwellRegullar';
+}
+
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: left;
+}
+
+.colorGT{
+    color: #005587;
+}
+
+hr {
+    background-color: #005587;
+    height: 5px;
+    margin-left: 15px;
+  }
+  .fondocodproy{
+    border-style: inset;
+    width: 200px;
+    margin-top: 10px;
+  }
+  .rowform{
+    padding: 10px;
+  }
+.subrowForm{
+  padding: 3px;
+}
+.buttonHover {
+  width: 180px;
+  font-family: 'RockwellRegullar';
+}
+.buttonHover:hover{
+  color: whitesmoke;
+}
+.buttonAction-out-line {
+  /* width: 180px; */
+  /* background-color: #005587; */
+  border-color: #005587;
+  color: #005587;
+  
+}
+
+.buttonAction-out-line:hover {
+  /* width: 180px; */
+  background-color: #005587; 
+  color: whitesmoke;
+}
+
+.anchobtn{
+  width: 140px;
+}
+.buttonAction{
+  /* width: 180px; */
+  background-color: #005587; 
+  border-color: #005587;
+  color: whitesmoke;
+  
+}
+
+.buttonAction:hover {
+  /* width: 180px; */
+  background-color: whitesmoke; 
+  color: #005587;
+}
+
+.rowBusqueda{
+  padding: 5px;
+}
+
+.anotherhover tbody tr:hover td { background: #A5E9FF; }
+.tamanyo_letra_labelp{
+  color: #005587 !important;
+  font-size: 13px;
+}
+
+.tamnyo_letra_titulo{
+  font-size: 31px;
+  font-weight: bold;
+  color: #005587;
+}
