@@ -160,14 +160,13 @@ body{
 /* EFECTOS DEL MENU HAWK*/
 
 .menulateral {
-  width: 368px;
+  width: 398px;
   position: absolute;
   height:100% ;
   background: #005587;
   color: #fff;
   outline: 0px;
-  margin-top: 77px; 
-  /* width: 368px;" */
+  
 }
 
 .menulateral h2{
