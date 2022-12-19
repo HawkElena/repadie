@@ -17,7 +17,7 @@ export var GLOBAL = {
 
     ,strNameCompany  :  'REPADIE'
 
-    ,url_repadie: 'http://localhost:8082/hawkmunimatrix/'
+    ,url_repadie: 'http://85.239.248.78:8085/repadiebackend/'
     ,url_hawkRisk: 'http://localhost:8082/hawkmunimatrix/'
     // ,url_hawkRisk: 'https://riskmatrixmuni.azurewebsites.net/hawkmunimatrix/'
                     

@@ -190,13 +190,19 @@
         <!-- nombre del proyecto -->
         <div class=" form-group row rowform">
             <div class="col-md-4">
-                <label for="nombreproyecto" class="col-form-label pull-right">
+                <label for="nombreproyecto" 
+                        class="col-form-label pull-right">
                     Nombre del proyecto
                 </label>
             </div>
             <div class="col-md-8">
-                <input type="text" class="form-control pull-left" id="nombreproyecto"
-                    placeholder="Ingresar nombre del proyecto">
+                <input  type="text" 
+                        class="form-control pull-left" 
+                        id="nombreproyecto"
+                        placeholder="Ingresar nombre del proyecto"
+                        #nombreProyecto="ngModel"
+                        [(ngModel)] = "regProyPriorizado._nombre"
+                        >
             </div>
         
         </div>
@@ -204,28 +210,46 @@
         <!-- row de la certificacion, y carga de archivo del proyecto -->
         <div class="row" >
             <div class="col-md-4">
-                <label for="certiproyecto" class="col-form-label pull-right">
+                <label for="puntoacta" class="col-form-label pull-right">
                     Certificación punto de acta de la priorización del proyecto
                 </label>
         
             </div>
             <div class="col-md-4">
-                <input type="text" class="form-control pull-left" id="certiproyecto"
-                    placeholder="Ingresar la certificación del proyecto">
+                <input  type="text" 
+                        class="form-control pull-left" 
+                        id="puntoacta"
+                        #puntoacta="ngModel"
+                        [(ngModel)] = "regProyPriorizado._puntoacta"
+                        placeholder="Ingresar la certificación del proyecto">
             </div>
             <div class="col-md-4">
                 <div class="row subrowForm">
                     <div class="col-6">
-                        <button type="button" class="btn btn-outline-info buttonHover">
+                        <!-- <button type="button" class="btn btn-outline-info buttonHover">
                             Cargar archivo
-                        </button>
-        
+                        </button> -->
+                        
+                    <div class="form-group">
+                        <input  type="file" 
+                                class="form-control-file" 
+                                id="archivo"
+                                #archivo="ngModel"
+                                [(ngModel)] = "regProyPriorizado._archivo"                        
+                                (change)="cargarArchivo($event);"
+                        >
+                    </div>
+                    <!-- <div>
+                        <textarea rows="10" disabled [innerHTML]="base64" id="txtAreaBase64"></textarea>
+                    </div> -->
                     </div>
         
                 </div>
                 <div class="row subrowForm">
                     <div class="col-6">
-                        <button type="button" class="btn btn-outline-info buttonHover">
+                        <button type="button" 
+                                class="btn btn-outline-info buttonHover" 
+                                (click)="convertFileToBase64();">
                             Cargar otros archivos
                         </button>
         
@@ -245,32 +269,59 @@
                 
                     </div>
                     <div class="col-md-2">
-                        <input type="date" class="form-control pull-left" id="fecpriproyecto"
-                            placeholder="Ingresar nombre del proyecto">
+                        <input  type="date" 
+                                class="form-control pull-left" 
+                                id="fechapriorizado"
+                                #fechapriorizado="ngModel"
+                                [(ngModel)] = "regProyPriorizado._fechapriorizado"                        
+                                placeholder="Ingresar nombre del proyecto">
                     </div>
                     <div class="col-md-2">
-                        <label for="categproyecto" class="col-form-label pull-left">
+                        <label for="categoria" class="col-form-label pull-left">
                             Categoria del proyecto
                         </label>
                 
                     </div>
                     <div class="col-md-3">
-                        <select id="idCategoria"  name="categoria" class="form-select form-select-md mb-3 pull-right" >
-                            <option id="idoptcateg" [selected]="false" [disabled]="true">Seleccione una categoria</option>
+                        <select     id="categoria"  
+                                    name="categoria" 
+                                    #categoria="ngModel"
+                                    [(ngModel)] = "regProyPriorizado._categoria"                        
+                                    class="form-select form-select-md mb-3 pull-right" >
+                            <option id="idoptcateg" 
+                                    [selected]="false" 
+                                    [disabled]="true">Seleccione una categoria
+                            </option>
+
+                        <!-- <option *ngFor="let g of generoService.generoList" 
+                            [value]="g.generoId">{{g.generoNombre}}
+                        </option> -->
+
+                        <option     *ngFor="let opts of this.arrCategoriaCmb" 
+                                    id="{{opts._tipo}}{{opts._indice}}" 
+                                    [value]="opts._indice"
+                                    [selected]="opts._esSeleccionado" 
+                                    [disabled]="opts._esInactivo">
+                            {{opts._valor}}
+                        </option>
                         </select>
                     </div>        
         </div>
         <!-- fecha de inscripcion -->
         <div class="row" >
             <div class="col-md-4">
-                <label for="fecinscripproyecto" class="col-form-label pull-right">
+                <label for="fechainscripcion" class="col-form-label pull-right">
                     Fecha de inscripción
                 </label>
         
             </div>
             <div class="col-md-2">
-                <input type="date" class="form-control pull-left" id="fecinscripproyecto"
-                    placeholder="Ingresar nombre del proyecto">
+                <input  type="date" 
+                        class="form-control pull-left" 
+                        id="fechainscripcion"
+                        #fechainscripcion="ngModel"
+                        [(ngModel)] = "regProyPriorizado._fechainscripcion"
+                        placeholder="Ingresar ndsadombre del proyecto">
             </div>
                             
         </div> 
@@ -288,9 +339,11 @@
                                 </button>
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-info buttonAction pull-left">
+                                <button type="button" class="btn btn-info buttonAction pull-left"
+                                    (click)="guardarProyectoPriorizado($event);">
                                     Guardar
                                 </button>
+                                
                             </div>
                             <div class="col-md-3">
                                 <button type="button" 

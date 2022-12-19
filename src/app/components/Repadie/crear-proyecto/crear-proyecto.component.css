@@ -89,3 +89,8 @@ hr {
   font-weight: bold;
   color: #005587;
 }
+
+.form-control-file{
+  background-color: yellow;
+  color: blue;
+}
