@@ -28,7 +28,7 @@ export class GetParamGlobalService {
 
     // let fecha = anio.substring(0,4) + '-' + mes + '-' + dia;
     // let fecha = this.miDatePipe.transform(strCampoFecha, 'dd-MM-yyyy');
-    let fecha = this.miDatePipe.transform(strCampoFecha, 'yyyy-MM-dd');
+    let fecha = this.miDatePipe.transform(strCampoFecha, 'yyyy-MM-ddTHH:MM:SS');
     // console.log("fecha formato yyyy-mm-dd",fecha);
 
     return fecha
